@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_id: 1
+  contract_id: 1
+  start: 2015-03-20
+  days: 1
+  vacationdays: 1
+  exitdays: 1
+  otherdays: 1
+  actualreturn: 2015-03-20
+  stamp: 
+
+two:
+  type_id: 1
+  contract_id: 1
+  start: 2015-03-20
+  days: 1
+  vacationdays: 1
+  exitdays: 1
+  otherdays: 1
+  actualreturn: 2015-03-20
+  stamp: 

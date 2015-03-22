@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321080020) do
+ActiveRecord::Schema.define(version: 20150321194044) do
 
   create_table "requests", force: :cascade do |t|
     t.integer  "type_id",            limit: 4
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150321080020) do
     t.string   "stamp_content_type", limit: 255
     t.integer  "stamp_file_size",    limit: 4
     t.datetime "stamp_updated_at"
+    t.string   "status",             limit: 255
   end
 
   create_table "types", force: :cascade do |t|
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150321080020) do
     t.string   "ppcountry",              limit: 255
     t.date     "ppstart"
     t.date     "ppexpire"
+    t.integer  "admin",                  limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

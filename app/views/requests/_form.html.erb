@@ -10,33 +10,33 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="form-group">
-    <%= f.label :type_id %><br>
-    <%= f.number_field :type_id, class: "form-control" %>
+    <%= f.label :type %><br>
+    <%= f.select :type_id, Type.all.collect {|x| [x.name, x.id]}, {:include_blank => 'Select a type'}, class:'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :contract_id %><br>
     <%= f.number_field :contract_id, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :start %><br>
+    <%= f.label 'Start Date' %><br>
     <%= f.date_select :start, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :days %><br>
+    <%= f.label 'Number of Days' %><br>
     <%= f.number_field :days, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :vacationdays %><br>
+    <%= f.label 'Vacation Days Used' %><br>
     <%= f.number_field :vacationdays, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :exitdays %><br>
+    <%= f.label 'Exit/Re-Entry Days Used' %><br>
     <%= f.number_field :exitdays, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :otherdays %><br>
+    <%= f.label 'Misc. Days Used' %><br>
     <%= f.number_field :otherdays, class: "form-control" %>
   </div>
   <div class="form-group">

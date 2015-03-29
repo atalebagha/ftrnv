@@ -1,0 +1,69 @@
+<%= form_for(@contract) do |f| %>
+  <% if @contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% @contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :start %><br>
+    <%= f.date_select :start, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :length %><br>
+    <%= f.number_field :length, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :vacationdays %><br>
+    <%= f.number_field :vacationdays, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :holidays %><br>
+    <%= f.number_field :holidays, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :visadays %><br>
+    <%= f.number_field :visadays, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employeeid %><br>
+    <%= f.text_field :employeeid, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :salary %><br>
+    <%= f.number_field :salary, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :housing %><br>
+    <%= f.check_box :housing, class: "checkbox"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :car %><br>
+    <%= f.check_box :car, class: "checkbox"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :project_id %><br>
+    <%= f.number_field :project_id, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :position %><br>
+    <%= f.text_field :position, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

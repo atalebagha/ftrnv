@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Title</th>
+      <th>Start</th>
+      <th>Length</th>
+      <th>Vacationdays</th>
+      <th>Holidays</th>
+      <th>Visadays</th>
+      <th>Employeeid</th>
+      <th>Salary</th>
+      <th>Housing</th>
+      <th>Car</th>
+      <th>Project</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.reference %></td>
+        <td><%= contract.title %></td>
+        <td><%= contract.start %></td>
+        <td><%= contract.length %></td>
+        <td><%= contract.vacationdays %></td>
+        <td><%= contract.holidays %></td>
+        <td><%= contract.visadays %></td>
+        <td><%= contract.employeeid %></td>
+        <td><%= contract.salary %></td>
+        <td><%= contract.housing %></td>
+        <td><%= contract.car %></td>
+        <td><%= contract.project_id %></td>
+        <td><%= contract.position %></td>
+        <td><%= link_to 'Show', contract %></td>
+        <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+        <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract', new_contract_path %>

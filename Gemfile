@@ -29,6 +29,16 @@ gem "paperclip", "~> 4.2"
 
 gem 'aws-sdk', '~> 1.5.7'
 
+gem 'gritter', '~> 1.1.0'
+
+gem 'haml', '~> 4.0.6'
+
+gem 'simple_form', '~> 3.1.0'
+
+gem 'kaminari', '~> 0.16.3'
+
+gem 'activeadmin', '~> 0.6.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

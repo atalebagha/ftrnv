@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321194044) do
+ActiveRecord::Schema.define(version: 20150329111249) do
+
+  create_table "contracts", force: :cascade do |t|
+    t.string   "reference",    limit: 255
+    t.string   "title",        limit: 255
+    t.date     "start"
+    t.integer  "length",       limit: 4
+    t.integer  "vacationdays", limit: 4
+    t.integer  "holidays",     limit: 4
+    t.integer  "visadays",     limit: 4
+    t.string   "employeeid",   limit: 255
+    t.integer  "salary",       limit: 4
+    t.boolean  "housing",      limit: 1
+    t.boolean  "car",          limit: 1
+    t.integer  "project_id",   limit: 4
+    t.string   "position",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id",      limit: 4
+  end
 
   create_table "requests", force: :cascade do |t|
     t.integer  "type_id",            limit: 4

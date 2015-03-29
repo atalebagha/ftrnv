@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @contract.reference %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @contract.title %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @contract.start %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @contract.length %>
+</p>
+
+<p>
+  <strong>Vacationdays:</strong>
+  <%= @contract.vacationdays %>
+</p>
+
+<p>
+  <strong>Holidays:</strong>
+  <%= @contract.holidays %>
+</p>
+
+<p>
+  <strong>Visadays:</strong>
+  <%= @contract.visadays %>
+</p>
+
+<p>
+  <strong>Employeeid:</strong>
+  <%= @contract.employeeid %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @contract.salary %>
+</p>
+
+<p>
+  <strong>Housing:</strong>
+  <%= @contract.housing %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @contract.car %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @contract.project_id %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @contract.position %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

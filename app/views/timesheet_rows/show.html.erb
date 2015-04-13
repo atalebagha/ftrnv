@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timesheet:</strong>
+  <%= @timesheet_row.timesheet_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @timesheet_row.type %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @timesheet_row.hours %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @timesheet_row.days %>
+</p>
+
+<%= link_to 'Edit', edit_timesheet_row_path(@timesheet_row) %> |
+<%= link_to 'Back', timesheet_rows_path %>

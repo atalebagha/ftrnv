@@ -31,13 +31,29 @@ gem 'aws-sdk', '~> 1.5.7'
 
 gem 'gritter', '~> 1.1.0'
 
-gem 'haml', '~> 4.0.6'
+gem 'rails-deprecated_sanitizer'
+
+# gem 'haml', '~> 4.0.6'
 
 gem 'simple_form', '~> 3.1.0'
 
 gem 'kaminari', '~> 0.16.3'
 
-gem 'activeadmin', '~> 0.6.6'
+gem 'calendar_date_select'
+
+gem 'railties', '~> 4.2.0'
+
+gem 'acts_as_list'
+gem 'rest_in_place' 
+# gem 'prototype-rails'
+# gem "audited-activerecord",    "~> 4.0"
+gem 'will_paginate',          '~> 3.0'
+gem 'cocoon'
+
+# gem 'bootstrap-sass', '~> 3.3.4'
+gem 'autoprefixer-rails'
+
+gem 'country_select'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

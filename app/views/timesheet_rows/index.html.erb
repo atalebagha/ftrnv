@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Timesheet Rows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timesheet</th>
+      <th>Type</th>
+      <th>Hours</th>
+      <th>Days</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timesheet_rows.each do |timesheet_row| %>
+      <tr>
+        <td><%= timesheet_row.timesheet_id %></td>
+        <td><%= timesheet_row.type %></td>
+        <td><%= timesheet_row.hours %></td>
+        <td><%= timesheet_row.days %></td>
+        <td><%= link_to 'Show', timesheet_row %></td>
+        <td><%= link_to 'Edit', edit_timesheet_row_path(timesheet_row) %></td>
+        <td><%= link_to 'Destroy', timesheet_row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timesheet row', new_timesheet_row_path %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @timesheet.project_id %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @timesheet.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @timesheet.year %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @timesheet.description %>
+</p>
+
+<p>
+  <strong>Committed:</strong>
+  <%= @timesheet.committed %>
+</p>
+
+<p>
+  <strong>Committed at:</strong>
+  <%= @timesheet.committed_at %>
+</p>
+
+<p>
+  <strong>Lock version:</strong>
+  <%= @timesheet.lock_version %>
+</p>
+
+<p>
+  <strong>Start day cache:</strong>
+  <%= @timesheet.start_day_cache %>
+</p>
+
+<p>
+  <strong>Auto sort:</strong>
+  <%= @timesheet.auto_sort %>
+</p>
+
+<%= link_to 'Edit', edit_timesheet_path(@timesheet) %> |
+<%= link_to 'Back', timesheets_path %>

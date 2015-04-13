@@ -1,0 +1,14 @@
+<%= simple_form_for(@timesheet_row) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :timesheet_id %>
+    <%= f.input :type %>
+    <%= f.input :hours %>
+    <%= f.input :days %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

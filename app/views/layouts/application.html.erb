@@ -8,13 +8,17 @@
   <%= render 'layouts/bootstrap' %>
 </head>
 <body>
-
 <%= render 'layouts/navigation' %>
+<div class="fluid-container">
+
 <%= render 'layouts/alert'  %>
+
 <div class="container-fluid">
-	<%= yield %>
-</div>
+
+<%= yield %>
+
 <%= render 'layouts/footer' %>
 
+</div>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Visas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Start</th>
+      <th>Length</th>
+      <th>Stay</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visas.each do |visa| %>
+      <tr>
+        <td><%= visa.type %></td>
+        <td><%= visa.start %></td>
+        <td><%= visa.length %></td>
+        <td><%= visa.stay %></td>
+        <td><%= visa.user_id %></td>
+        <td><%= link_to 'Show', visa %></td>
+        <td><%= link_to 'Edit', edit_visa_path(visa) %></td>
+        <td><%= link_to 'Destroy', visa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visa', new_visa_path %>

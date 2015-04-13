@@ -1,0 +1,16 @@
+<%= simple_form_for(@visa_request) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :code %>
+    <%= f.input :date %>
+    <%= f.input :purpose %>
+    <%= f.input :project_id %>
+    <%= f.input :user_id %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

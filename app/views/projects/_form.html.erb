@@ -1,0 +1,15 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-group">
+    <%= f.association :client, label_method: :name, value_method: :id, prompt: "Choose a Company", class: "form-control" %>
+    <%= f.input :active, class: "form-control" %>
+    <%= f.input :name, class: "form-control" %>
+    <%= f.input :code, class: "form-control" %>
+    <%= f.input :description, class: "form-control" %>
+    <%= f.input :locked_version, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :visa_requests
+
+  resources :timesheet_rows
+
+  resources :timesheets
+
+  resources :projects
+
+  resources :clients
+
+  resources :entries
+
+  resources :visas
+
   resources :contracts
 
   devise_for :users

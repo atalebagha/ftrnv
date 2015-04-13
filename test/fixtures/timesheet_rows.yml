@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timesheet_id: 1
+  type: 1
+  hours: 1.5
+  days: 1.5
+
+two:
+  timesheet_id: 1
+  type: 1
+  hours: 1.5
+  days: 1.5

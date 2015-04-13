@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @visa.type %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @visa.start %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @visa.length %>
+</p>
+
+<p>
+  <strong>Stay:</strong>
+  <%= @visa.stay %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @visa.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_visa_path(@visa) %> |
+<%= link_to 'Back', visas_path %>

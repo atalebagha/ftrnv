@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329111249) do
+ActiveRecord::Schema.define(version: 20150331205058) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "code",         limit: 255
+    t.boolean  "active",       limit: 1
+    t.text     "description",  limit: 65535
+    t.integer  "lock_version", limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "contracts", force: :cascade do |t|
     t.string   "reference",    limit: 255
@@ -32,6 +42,31 @@ ActiveRecord::Schema.define(version: 20150329111249) do
     t.integer  "user_id",      limit: 4
   end
 
+  create_table "entries", force: :cascade do |t|
+    t.string   "type",               limit: 255
+    t.date     "date"
+    t.integer  "user_id",            limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.integer  "visa_id",            limit: 4
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "customer_id",    limit: 4
+    t.boolean  "active",         limit: 1
+    t.string   "name",           limit: 255
+    t.string   "code",           limit: 255
+    t.text     "description",    limit: 65535
+    t.integer  "locked_version", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "client_id",      limit: 4
+  end
+
   create_table "requests", force: :cascade do |t|
     t.integer  "type_id",            limit: 4
     t.integer  "contract_id",        limit: 4
@@ -48,6 +83,29 @@ ActiveRecord::Schema.define(version: 20150329111249) do
     t.integer  "stamp_file_size",    limit: 4
     t.datetime "stamp_updated_at"
     t.string   "status",             limit: 255
+  end
+
+  create_table "timesheet_rows", force: :cascade do |t|
+    t.integer  "timesheet_id", limit: 4
+    t.integer  "type",         limit: 4
+    t.float    "hours",        limit: 24
+    t.float    "days",         limit: 24
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "timesheets", force: :cascade do |t|
+    t.integer  "project_id",      limit: 4
+    t.integer  "month",           limit: 4
+    t.integer  "year",            limit: 4
+    t.text     "description",     limit: 65535
+    t.boolean  "committed",       limit: 1
+    t.datetime "committed_at"
+    t.integer  "lock_version",    limit: 4
+    t.datetime "start_day_cache"
+    t.string   "auto_sort",       limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "types", force: :cascade do |t|
@@ -82,5 +140,30 @@ ActiveRecord::Schema.define(version: 20150329111249) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "visa_requests", force: :cascade do |t|
+    t.string   "code",        limit: 255
+    t.date     "date"
+    t.string   "purpose",     limit: 255
+    t.integer  "project_id",  limit: 4
+    t.integer  "user_id",     limit: 4
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "visas", force: :cascade do |t|
+    t.string   "type",               limit: 255
+    t.date     "start"
+    t.integer  "length",             limit: 4
+    t.integer  "stay",               limit: 4
+    t.integer  "user_id",            limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
 
 end

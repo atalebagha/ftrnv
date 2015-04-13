@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Timesheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Description</th>
+      <th>Committed</th>
+      <th>Committed at</th>
+      <th>Lock version</th>
+      <th>Start day cache</th>
+      <th>Auto sort</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timesheets.each do |timesheet| %>
+      <tr>
+        <td><%= timesheet.project_id %></td>
+        <td><%= timesheet.month %></td>
+        <td><%= timesheet.year %></td>
+        <td><%= timesheet.description %></td>
+        <td><%= timesheet.committed %></td>
+        <td><%= timesheet.committed_at %></td>
+        <td><%= timesheet.lock_version %></td>
+        <td><%= timesheet.start_day_cache %></td>
+        <td><%= timesheet.auto_sort %></td>
+        <td><%= link_to 'Show', timesheet %></td>
+        <td><%= link_to 'Edit', edit_timesheet_path(timesheet) %></td>
+        <td><%= link_to 'Destroy', timesheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timesheet', new_timesheet_path %>

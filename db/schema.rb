@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331205058) do
+ActiveRecord::Schema.define(version: 20150422185555) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -70,11 +70,11 @@ ActiveRecord::Schema.define(version: 20150331205058) do
   create_table "requests", force: :cascade do |t|
     t.integer  "type_id",            limit: 4
     t.integer  "contract_id",        limit: 4
-    t.date     "start"
-    t.integer  "days",               limit: 4
-    t.integer  "vacationdays",       limit: 4
-    t.integer  "exitdays",           limit: 4
-    t.integer  "otherdays",          limit: 4
+    t.date     "start"                         null: false
+    t.integer  "days",               limit: 4, default: 0, null: false
+    t.integer  "vacationdays",       limit: 4, default: 0, null: false
+    t.integer  "exitdays",           limit: 4, default: 0, null: false
+    t.integer  "otherdays",          limit: 4, default: 0, null: false
     t.date     "actualreturn"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150331205058) do
     t.integer  "stamp_file_size",    limit: 4
     t.datetime "stamp_updated_at"
     t.string   "status",             limit: 255
+    t.integer  "user_id",            limit: 4
   end
 
   create_table "timesheet_rows", force: :cascade do |t|

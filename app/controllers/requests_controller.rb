@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /requests
   # GET /requests.json
@@ -15,6 +16,10 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @request.user_id = current_user.id
+    @request.vacationdays = 0
+    @request.exitdays = 0
+    @request.otherdays = 0
   end
 
   # GET /requests/1/edit
@@ -25,6 +30,10 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(request_params)
+    @request.status = "Pending"
+    @request.days = @request.vacationdays + @request.exitdays + @request.otherdays
+    @request.actualreturn = @request.start + @request.days
+    @request.user_id = current_user.id
 
     respond_to do |format|
       if @request.save
@@ -67,8 +76,13 @@ class RequestsController < ApplicationController
       @request = Request.find(params[:id])
     end
 
+    def set_user
+      @user = User.find[params[:user_id]]
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:type_id, :contract_id, :start, :days, :vacationdays, :exitdays, :otherdays, :actualreturn, :stamp)
+      params.require(:request).permit(:type_id, :contract_id, :start, :days, :vacationdays, :exitdays, :otherdays, :actualreturn, :stamp, :user_id)
     end
+
 end

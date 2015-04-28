@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :visas
   has_many :requests
-  has_many :contracts 
+  has_many :contracts
+  has_many :visa_requests
+
+  validates :first_name, :last_name, presence: true
+
 end
